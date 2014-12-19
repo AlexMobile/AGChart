@@ -47,6 +47,28 @@ class AGChartDataSourceTests: XCTestCase {
         self.checkSortingInDataSource(dataSource)
     }
   
+    func testExtremums() {
+        let points = self.constantValues()
+        dataSource.loadFromArray(points)
+        var minimum = dataSource.minValue
+        var maximum = dataSource.maxValue
+        XCTAssertEqual(minimum, -3, "Wrong minimum: \(minimum) instead of -3")
+        XCTAssertEqual(maximum, 3, "Wrong maximum: \(maximum) instead of 3")
+        
+        let additionalPoints = self.constantValues(multiplier: 10);
+        dataSource.addDataFromArray(additionalPoints);
+        minimum = dataSource.minValue
+        maximum = dataSource.maxValue
+        XCTAssertEqual(minimum, -30, "Wrong minimum: \(minimum) instead of -30")
+        XCTAssertEqual(maximum, 30, "Wrong maximum: \(maximum) instead of 30")
+        
+        let notImportantPoints = self.constantValues(multiplier: 5);
+        dataSource.addDataFromArray(notImportantPoints);
+        minimum = dataSource.minValue
+        maximum = dataSource.maxValue
+        XCTAssertEqual(minimum, -30, "Wrong minimum: \(minimum) instead of -30")
+        XCTAssertEqual(maximum, 30, "Wrong maximum: \(maximum) instead of 30")
+    }
     
     // mark: private methods
     
@@ -71,5 +93,14 @@ class AGChartDataSourceTests: XCTestCase {
             points.append(point)
         }
         return points;
+    }
+    
+    func constantValues(multiplier: Double = 1) -> [AGChartPoint] {
+        return [AGChartPoint(xValue: 10 * multiplier, yValue: 1 * multiplier),
+            AGChartPoint(xValue: -10 * multiplier, yValue: -1 * multiplier),
+            AGChartPoint(xValue: 20 * multiplier, yValue: 2 * multiplier),
+            AGChartPoint(xValue: -20 * multiplier, yValue: -2 * multiplier),
+            AGChartPoint(xValue: 30 * multiplier, yValue: 3 * multiplier),
+            AGChartPoint(xValue: -30 * multiplier, yValue:-3 * multiplier)]
     }
 }

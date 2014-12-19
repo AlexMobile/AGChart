@@ -64,11 +64,11 @@ public class AGChartDataSource: NSObject {
             return (0, 0);
         }
         let firstPoint = _data.first!
-        let val = firstPoint.xValue?.value;
+        let val = firstPoint.yValue?.value;
         var min = Double(val != nil ? val! : 0)
         var max = min
         for point in _data {
-            let val = firstPoint.xValue?.value;
+            let val = point.yValue?.value;
             let value = Double(val != nil ? val! : 0)
             if min > value {
                 min = value
