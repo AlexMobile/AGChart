@@ -8,6 +8,8 @@
 
 import UIKit
 
+let AGChartDataSourceUpdateNotification = "AGChartDataUpdated"
+
 public class AGChartDataSource: NSObject {
     var _data: [AGChartPoint] = []
     var _minValue:Double = 0
@@ -39,12 +41,14 @@ public class AGChartDataSource: NSObject {
         _data = array
         _data.sort(isOrderedBefore)
         self.recalculateExtremums()
+        informUIAboutChanges()
     }
     
     public func addDataFromArray(array:[AGChartPoint]) {
         _data += array
         _data.sort(isOrderedBefore)
         self.updateExtremumsWithAppendingArray(array)
+        self.informUIAboutChanges()
     }
     
     public func pointAtIndex(index: Int) -> AGChartPoint? {
@@ -55,8 +59,13 @@ public class AGChartDataSource: NSObject {
     }
     
     // MARK: - Private methods
+    
+    func informUIAboutChanges() {
+        NSNotificationCenter.defaultCenter().postNotificationName(AGChartDataSourceUpdateNotification, object: self)
+    }
+    
     func isOrderedBefore(val1: AGChartPoint, val2: AGChartPoint) -> Bool {
-        return val1.xValue?.value < val2.xValue?.value
+        return val1.xValue!.value < val2.xValue!.value
     }
     
     func extremumsForArray(array: [AGChartPoint]) -> (min: Double, max: Double) {
@@ -64,12 +73,12 @@ public class AGChartDataSource: NSObject {
             return (0, 0);
         }
         let firstPoint = _data.first!
-        let val = firstPoint.yValue?.value;
-        var min = Double(val != nil ? val! : 0)
+        let val = firstPoint.yValue;
+        var min = Double(val != nil ? val!.value : 0)
         var max = min
         for point in _data {
-            let val = point.yValue?.value;
-            let value = Double(val != nil ? val! : 0)
+            let val = point.yValue;
+            let value = Double(val != nil ? val!.value : 0)
             if min > value {
                 min = value
             }
