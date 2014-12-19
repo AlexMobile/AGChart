@@ -9,7 +9,11 @@
 /* Begin PBXBuildFile section */
 		1D5835A21A442EEA0051CACD /* AGChart.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D5835A11A442EEA0051CACD /* AGChart.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D5835A81A442EEA0051CACD /* AGChart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D58359C1A442EEA0051CACD /* AGChart.framework */; };
-		1D5835AF1A442EEA0051CACD /* AGChartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5835AE1A442EEA0051CACD /* AGChartTests.swift */; };
+		1D5835AF1A442EEA0051CACD /* AGChartDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5835AE1A442EEA0051CACD /* AGChartDataSourceTests.swift */; };
+		1D5835EA1A4438840051CACD /* AGChartPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5835E91A4438840051CACD /* AGChartPoint.swift */; };
+		1D5835ED1A4438C70051CACD /* AGChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5835EC1A4438C70051CACD /* AGChartView.swift */; };
+		1D5835EF1A443E520051CACD /* AGChartDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5835EE1A443E520051CACD /* AGChartDataSource.swift */; };
+		1D5835F21A44413C0051CACD /* AGChartExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5835F11A44413C0051CACD /* AGChartExtentions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +32,11 @@
 		1D5835A11A442EEA0051CACD /* AGChart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGChart.h; sourceTree = "<group>"; };
 		1D5835A71A442EEA0051CACD /* AGChartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AGChartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D5835AD1A442EEA0051CACD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1D5835AE1A442EEA0051CACD /* AGChartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGChartTests.swift; sourceTree = "<group>"; };
+		1D5835AE1A442EEA0051CACD /* AGChartDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGChartDataSourceTests.swift; sourceTree = "<group>"; };
+		1D5835E91A4438840051CACD /* AGChartPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGChartPoint.swift; sourceTree = "<group>"; };
+		1D5835EC1A4438C70051CACD /* AGChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGChartView.swift; sourceTree = "<group>"; };
+		1D5835EE1A443E520051CACD /* AGChartDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGChartDataSource.swift; sourceTree = "<group>"; };
+		1D5835F11A44413C0051CACD /* AGChartExtentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGChartExtentions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				1D5835A11A442EEA0051CACD /* AGChart.h */,
+				1D5835E81A44385A0051CACD /* Data */,
+				1D5835EB1A44389A0051CACD /* UI */,
 				1D58359F1A442EEA0051CACD /* Supporting Files */,
 			);
 			path = AGChart;
@@ -88,7 +98,7 @@
 		1D5835AB1A442EEA0051CACD /* AGChartTests */ = {
 			isa = PBXGroup;
 			children = (
-				1D5835AE1A442EEA0051CACD /* AGChartTests.swift */,
+				1D5835AE1A442EEA0051CACD /* AGChartDataSourceTests.swift */,
 				1D5835AC1A442EEA0051CACD /* Supporting Files */,
 			);
 			path = AGChartTests;
@@ -100,6 +110,32 @@
 				1D5835AD1A442EEA0051CACD /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1D5835E81A44385A0051CACD /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				1D5835F01A4440FF0051CACD /* Extentions */,
+				1D5835E91A4438840051CACD /* AGChartPoint.swift */,
+				1D5835EE1A443E520051CACD /* AGChartDataSource.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		1D5835EB1A44389A0051CACD /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				1D5835EC1A4438C70051CACD /* AGChartView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		1D5835F01A4440FF0051CACD /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				1D5835F11A44413C0051CACD /* AGChartExtentions.swift */,
+			);
+			path = Extentions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,6 +245,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D5835EA1A4438840051CACD /* AGChartPoint.swift in Sources */,
+				1D5835F21A44413C0051CACD /* AGChartExtentions.swift in Sources */,
+				1D5835ED1A4438C70051CACD /* AGChartView.swift in Sources */,
+				1D5835EF1A443E520051CACD /* AGChartDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +256,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D5835AF1A442EEA0051CACD /* AGChartTests.swift in Sources */,
+				1D5835AF1A442EEA0051CACD /* AGChartDataSourceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,27 +359,32 @@
 		1D5835B31A442EEA0051CACD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = AGChart/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		1D5835B41A442EEA0051CACD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = AGChart/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -395,6 +440,7 @@
 				1D5835B41A442EEA0051CACD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1D5835B51A442EEA0051CACD /* Build configuration list for PBXNativeTarget "AGChartTests" */ = {
 			isa = XCConfigurationList;
@@ -403,6 +449,7 @@
 				1D5835B71A442EEA0051CACD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
