@@ -15,6 +15,8 @@
 		1D5835EF1A443E520051CACD /* AGChartDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5835EE1A443E520051CACD /* AGChartDataSource.swift */; };
 		1D5835F21A44413C0051CACD /* AGChartExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5835F11A44413C0051CACD /* AGChartExtentions.swift */; };
 		1D5835F41A4468560051CACD /* AGChartDataLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5835F31A4468560051CACD /* AGChartDataLayer.swift */; };
+		27B108B11A4583500074C609 /* AGChartCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B108B01A4583500074C609 /* AGChartCalculator.swift */; };
+		27B108B31A45910E0074C609 /* AGChartCustomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B108B21A45910E0074C609 /* AGChartCustomizer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +41,8 @@
 		1D5835EE1A443E520051CACD /* AGChartDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGChartDataSource.swift; sourceTree = "<group>"; };
 		1D5835F11A44413C0051CACD /* AGChartExtentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGChartExtentions.swift; sourceTree = "<group>"; };
 		1D5835F31A4468560051CACD /* AGChartDataLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGChartDataLayer.swift; sourceTree = "<group>"; };
+		27B108B01A4583500074C609 /* AGChartCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGChartCalculator.swift; sourceTree = "<group>"; };
+		27B108B21A45910E0074C609 /* AGChartCustomizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGChartCustomizer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,8 @@
 				1D5835F01A4440FF0051CACD /* Extentions */,
 				1D5835E91A4438840051CACD /* AGChartPoint.swift */,
 				1D5835EE1A443E520051CACD /* AGChartDataSource.swift */,
+				27B108B01A4583500074C609 /* AGChartCalculator.swift */,
+				27B108B21A45910E0074C609 /* AGChartCustomizer.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -250,9 +256,11 @@
 			files = (
 				1D5835EA1A4438840051CACD /* AGChartPoint.swift in Sources */,
 				1D5835F21A44413C0051CACD /* AGChartExtentions.swift in Sources */,
+				27B108B31A45910E0074C609 /* AGChartCustomizer.swift in Sources */,
 				1D5835ED1A4438C70051CACD /* AGChartView.swift in Sources */,
 				1D5835F41A4468560051CACD /* AGChartDataLayer.swift in Sources */,
 				1D5835EF1A443E520051CACD /* AGChartDataSource.swift in Sources */,
+				27B108B11A4583500074C609 /* AGChartCalculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

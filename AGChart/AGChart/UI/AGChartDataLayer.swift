@@ -9,34 +9,48 @@
 import UIKit
 
 class AGChartDataLayer: CAShapeLayer {
-    weak var _datasource: AGChartDataSource?
+    weak var calculator: AGChartCalculator? {
+        didSet {
+            redraw()
+        }
+    }
+    
+    weak var customizer: AGChartCustomizer? {
+        didSet {
+            redraw()
+        }
+    }
     
     weak var datasource: AGChartDataSource? {
-        get {
-            return _datasource
-        }
-        set {
-            if (_datasource != nil) {
-                
-            }
-            _datasource = newValue
+        didSet {
             self.redraw()
         }
     }
     
-    override func display() {
-        super.display();
-        redraw();
+    override var bounds: CGRect {
+        didSet {
+            redraw()
+        }
     }
     
+    // MARK: - Initializers
+    
+    override init() {
+        super.init()
+    }
+
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    // MARK - Private methods
+    
     func redraw() {
-//        self.lineWidth = 2;
-        self.fillColor = UIColor.blueColor().CGColor
-        self.strokeColor = UIColor.cyanColor().CGColor
+        if (customizer == nil) {
+            return
+        }
+        self.lineWidth = customizer!.chartLineWidth;
+        self.strokeColor = customizer!.chartColor.CGColor
         self.path = CGPathCreateWithEllipseInRect(self.bounds, nil)
-        
-        self.backgroundColor = UIColor.blackColor().CGColor
-        NSLog("frame = \(self.frame)");
-        NSLog("bounds = \(self.bounds)");
     }
 }
